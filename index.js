@@ -26,7 +26,9 @@ client.connect(err => {
     const eventsCollection = client.db("volunteerNetwork").collection("events");
     const registrationCollection = client.db("volunteerNetwork").collection("registration");
 
-
+    app.get('/', (req, res) => {
+        res.send('working')
+    })
 
     app.get('/events', (req, res) => {
         eventsCollection.find({})
